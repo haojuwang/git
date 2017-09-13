@@ -1,2 +1,3 @@
 hao
 hello java
+new line
