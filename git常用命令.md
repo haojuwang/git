@@ -1,4 +1,4 @@
-git 常用命令
+#  git 常用命令
 
 ## 获得版本库
 
@@ -14,19 +14,19 @@ git 常用命令
 
 * Git log
 
-  ​	查看提交日志
+  ​ 查看提交日志
 
 * git diff
 
-  ​	比较文件在不同状态中的文件区别
+  ​ 比较文件在不同状态中的文件区别
 
 ## 版本管理
 
 * Git add
 
-  ​	加入到版本暂存区中
+  ​ 加入到版本暂存区中
 
-  ​	. 表示当前文件夹都纳入到暂存区
+  ​ . 表示当前文件夹都纳入到暂存区
 
 * git commit
 
@@ -42,11 +42,11 @@ git 常用命令
 
 * git pull
 
-  ​	将远程版本库中的文件拉取到本地
+  ​ 将远程版本库中的文件拉取到本地
 
 * git push
 
-  ​	将本地版本库中的文件推送到远程库
+  ​ 将本地版本库中的文件推送到远程库
 
 ## Git配置
 
@@ -79,7 +79,7 @@ git 常用命令
     
   ```
 
-  ​	
+  ​ 
 
 ## git的提交更新
 
@@ -114,11 +114,11 @@ Git rm :
 
 rm:
 
-​	将文件删除了，这时，被删除的文件并未纳入缓存区当中.
+​ 将文件删除了，这时，被删除的文件并未纳入缓存区当中.
 
 如果恢复文件：
 
- 	git checkout — index.php
+  git checkout — index.php
 
 
 
@@ -134,7 +134,7 @@ git mv from_file to_file
 * -p 展开显示每次提交的内容差异
 * -n 仅显示最近的n次更新
 * —stat 仅显示简要的增改行数统计
-* —pretty==oneline
+* —pretty=oneline
 * —pretty=format:'%h - %an,%ar:%s'
 * —graph 图形化的方式查看log
 
@@ -193,7 +193,7 @@ git mv from_file to_file
 
 ## git 回退版本
 
-* 回退到上一个版本
+* 回退到上一个版本 
 
   ```
   git reset -- hard HEAD^  //回退到上一个版本
@@ -277,7 +277,7 @@ git mv from_file to_file
 
   ​
 
-  ​	
+  ​ 
 
 ## 查看一个文件都是谁提交的
 
@@ -294,3 +294,107 @@ git blame  index.php
 * git diff —cached： 比较的是版本库与暂存区之间的差别。
 
 
+
+
+
+## 远程
+
+#### 查看远程仓库
+
+* Git remote show 显示远程仓库的别名。
+
+* Git remote show origin 远程仓库详细信息
+
+  ```
+  git remote show origin
+
+  * remote origin
+    Fetch URL: https://github.com/haojuwang/git.git
+    Push  URL: https://github.com/haojuwang/git.git
+    HEAD branch: master
+    Remote branch:
+      master tracked
+    Local branch configured for 'git pull':
+      master merges with remote master
+    Local ref configured for 'git push':
+      master pushes to master (up to date)
+  ```
+
+  ​
+
+#### 添加到远程仓库
+
+*  Git remote add origin 远程地址
+* git push -u origin master
+
+#### 查看远程仓库
+
+* git branch -a 查看远程分支
+
+* git branch -av 查看远程分支并显示最后一次提交的信息
+
+* git remote show origin 查看远程分支与本地的对比
+
+  ​
+
+## clone
+
+* git clone git@github.com:haojuwang/git.git git2  下载到指定的git2 文件夹
+
+
+
+#### 创建远程分支
+
+* git push —set-upstream origin 远程名称    
+
+
+
+
+
+#### 基于远程分支创建分支
+
+git checkout -b develop origin/develop
+
+
+
+
+
+## git别名 
+
+* git config --global alias.br branch   br 表示 branch 的简写
+
+* ~/.gitconfig 别名文件
+
+  ```
+  cat ~/.gitconfig
+
+  [alias]
+    br = branch
+    co = commit
+  ```
+
+  ​
+
+
+
+
+
+
+
+
+
+## 生成公钥私钥
+
+* ssh-keygen 
+
+  ```
+  ssh-keygen
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/Users/lixueqin/.ssh/id_rsa):
+  ```
+
+  ​
+
+* id_rsa 私钥 不能给别人
+
+* id_rsa.pub 公钥
